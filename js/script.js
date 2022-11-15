@@ -5,9 +5,20 @@ const form = document.querySelector('#form');
 
 form.addEventListener('submit', (e) => {
     const li = document.createElement('li');
-    li.textContent = input.value;
+    const span = document.createElement('span');
+
+    span.textContent = 'X';
+    li.innerHTML = input.value;
+
+    span.onclick = () => del(li);
+
+    li.appendChild(span);
     list.appendChild(li);
+
     input.value = '';
-    
     e.preventDefault();
 });
+
+function del(element) {
+    element.remove();
+}
