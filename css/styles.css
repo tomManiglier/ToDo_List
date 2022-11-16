@@ -4,3 +4,98 @@
     box-sizing: border-box;
     font-family: 'Sora', sans-serif;
 }
+
+body {
+    background-color: #444;
+    width: 100%;
+}
+
+form {
+    padding: 200px 0 80px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper {
+    height: 60px;
+    width: 700px;
+    position: relative;
+}
+
+input[type='text'] {
+    height: 100%;
+    width: 100%;
+    background: #666666;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    caret-color: white;
+    color: #fff;
+    font-size: 16px;
+    padding: 0 30px;
+}
+
+input::placeholder {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    background: #333333;
+    border-radius: 24px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+button img {
+    height: 24px;
+    width: 24px;
+}
+
+.container {
+    height: auto;
+    width: 500px;
+    margin: 0 auto;
+}
+
+.container h1 {
+    font-size: 32px;
+    color: #F6F6F6;
+}
+
+.container hr {
+    border: 1px solid #ccc;
+    margin-bottom: 30px;
+}
+
+.container ul {
+    list-style: none;
+}
+
+.container ul li {
+    width: 500px;
+    height: 50px;
+    background: #666666;
+    color: #FFFFFF;
+    font-size: 18px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px 0 18px;
+    margin-bottom: 10px;
+}
+
+ul li span {
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+}

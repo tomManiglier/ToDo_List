@@ -13,12 +13,18 @@
     <body>
         
         <form id="form">
-            <input type="text" id="input" required autocomplete="off">
-            <input type="submit" value="Add" id="submit">
+            <div class="wrapper">
+                <input type="text" id="input" required autocomplete="off" placeholder="Write a Task...">
+                <button id="submit"><img src="img/add.svg" alt="Add Icon"></button>
+            </div>
         </form>
 
-        <ul id="list"></ul>
-
+        <div class="container">
+            <h1>Tasks</h1>
+            <hr>
+            <ul id="list"></ul>
+        </div>
+        
         <!-- JavaScript -->
         <script src="js/script.js"></script>
     </body>

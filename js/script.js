@@ -7,7 +7,7 @@ form.addEventListener('submit', (e) => {
     const li = document.createElement('li');
     const span = document.createElement('span');
 
-    span.textContent = 'X';
+    span.innerHTML = '<img src="img/delete.png" alt="Delete Icon">';
     li.innerHTML = input.value;
 
     span.onclick = () => del(li);
