@@ -42,6 +42,9 @@ input::placeholder {
 }
 
 button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     top: 50%;
     right: 6px;
@@ -72,7 +75,9 @@ button img {
 }
 
 .container hr {
-    border: 1px solid #ccc;
+    border: none;
+    height: 1px;
+    background-color: #ccc;
     margin-bottom: 30px;
 }
 
@@ -98,4 +103,10 @@ ul li span {
     height: 24px;
     width: 24px;
     cursor: pointer;
+}
+
+#empty {
+    text-align: center;
+    color: #fff;
+    opacity: .8;
 }
