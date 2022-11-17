@@ -109,6 +109,22 @@ ul li:last-child {
     margin-bottom: 100px;
 }
 
+.wrp {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+span.favorite {
+    height: 24px;
+    width: 24px;
+    background: url(../img/favorite.svg);
+}
+
+span.favorite-active {
+    background: url(../img/favorite-active.svg);
+}
+
 #empty {
     text-align: center;
     color: #fff;

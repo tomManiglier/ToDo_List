@@ -4,12 +4,21 @@ const list = document.querySelector('#list');
 const form = document.querySelector('#form');
 const empty = document.querySelector('#empty');
 
+// Local Storage
 list.innerHTML = localStorage.getItem('localList')
 
+// Delete Debug on refresh
 const spanDeletes = document.querySelectorAll('.delete');
 
 for (let span of spanDeletes) {
-    span.onclick = () => del(span.parentElement);
+    span.onclick = () => del(span.parentElement.parentElement);
+}
+
+// Favorite Debug on refresh
+const favorites = document.querySelectorAll('.favorite');
+
+for (let favorite of favorites) {
+    favorite.onclick = () => fav(favorite);
 }
 
 if (list.innerHTML == '') {
@@ -21,16 +30,26 @@ if (list.innerHTML == '') {
 form.addEventListener('submit', (e) => {
     const li = document.createElement('li');
     const span = document.createElement('span');
+    const favorite = document.createElement('span');
+    const wrp = document.createElement('div');
 
-    empty.style.display = 'none';
+
+    li.innerHTML = input.value;
 
     span.classList.add('delete');
     span.innerHTML = '<img src="img/delete.png" alt="Delete Icon">';
-    li.innerHTML = input.value;
-
     span.onclick = () => del(li);
 
-    li.appendChild(span);
+    favorite.classList.add('favorite');
+    favorite.onclick = () => fav(favorite);
+
+    wrp.classList.add('wrp');
+    
+    empty.style.display = 'none';
+
+    li.appendChild(wrp);
+    wrp.appendChild(favorite);
+    wrp.appendChild(span);
     list.appendChild(li);
 
     
@@ -40,6 +59,7 @@ form.addEventListener('submit', (e) => {
     localStorage.setItem('localList', list.innerHTML);
 });
 
+// Delete Li
 function del(element) {
     element.remove();
 
@@ -49,5 +69,11 @@ function del(element) {
         empty.style.display = 'none';
     }
 
+    localStorage.setItem('localList', list.innerHTML);
+}
+
+// Favorite 
+function fav(element) {
+    element.classList.toggle('favorite-active');
     localStorage.setItem('localList', list.innerHTML);
 }
