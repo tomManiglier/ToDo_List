@@ -55,7 +55,12 @@ button {
     border-radius: 24px;
     outline: none;
     border: none;
+    transition: .2s;
     cursor: pointer;
+}
+
+button:active {
+    opacity: 0.7;
 }
 
 button img {
@@ -97,6 +102,7 @@ button img {
     justify-content: space-between;
     padding: 0 10px 0 18px;
     margin-bottom: 10px;
+    overflow: hidden;
 }
 
 ul li span {
@@ -130,4 +136,19 @@ span.favorite-active {
     color: #fff;
     opacity: .8;
     font-style: italic;
+}
+
+@media screen and (max-width: 730px) {
+    .wrapper {
+        width: 90%;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    li {
+        margin: 10px auto;
+        max-width: 90%;
+    }
 }

@@ -77,3 +77,7 @@ function fav(element) {
     element.classList.toggle('favorite-active');
     localStorage.setItem('localList', list.innerHTML);
 }
+
+// Resizing Phone Keyboard
+const metas = document.getElementsByTagName('meta');
+metas[1].content = `width=device-width, height=${window.innerHeight}, initial-scale=1.0`;
