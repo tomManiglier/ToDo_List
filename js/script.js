@@ -81,3 +81,31 @@ function fav(element) {
 // Resizing Phone Keyboard
 const metas = document.getElementsByTagName('meta');
 metas[1].content = `width=device-width, height=${window.innerHeight}, initial-scale=1.0`;
+
+// Worker Service
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker
+            .register('sw.js')
+            .then(registration => {
+                console.log(`Service Worker TodoList enregistré!\nRessource: ${registration.scope}`);
+            })
+            .catch(err => {
+                console.log(`Echec de l'enregistrement du Service Worker TodoList: ${err}`);
+            });
+    });
+}
+
+// Btn App
+window.onbeforeinstallprompt = (event) => 
+{
+    event.preventDefault(); // annuler la banniere par defaut
+    installBtn.classList.add("slide"); //affiche la banniere perso
+
+    installBtn.onclick = () => 
+    {
+        installBtn.classList.remove("slide"); //faire disparaitre le bouton
+        setTimeout(()=>installBtn.style.display = "none",500);
+        event.prompt(); //permettre l'installation
+    };
+};
